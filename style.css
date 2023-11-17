@@ -1,0 +1,22 @@
+form {
+  display: block;
+  background-color: lightgoldenrodyellow;
+  max-width: fit-content;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+label {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+select {
+  display: block;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: lightcyan;
+  margin-top: 15px;
+  padding: 10px;
+}
