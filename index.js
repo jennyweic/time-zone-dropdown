@@ -1,36 +1,46 @@
 function showCity(event) {
+  event.preventDefault();
   if (event.target.value === "paris") {
-    alert("");
+    updateParis();
   }
 
   if (event.target.value === "tokyo") {
-    alert("");
+    updateTokyo();
   }
 
   if (event.target.value === "sydney") {
-    alert("");
+    updateSydney();
   }
 }
 let selectedCity = document.querySelector("#city");
 selectedCity.addEventListener("change", showCity);
 
-//return paris current date and time
-let parisTimeDate = moment()
-  .tz("Europe/Paris")
-  .format("[It is ]dddd DD, MMMM YYYY, HH:mm:s A [in] ${tz}");
-let parisElement = document.querySelector("#paris");
-parisElement.innerHTML = parisTimeDate;
+function updateParis() {
+  let parisTimeDate = moment()
+    .tz("Europe/Paris")
+    .format("dddd DD, MMMM YYYY, HH:mm a");
+  //   let parisElement = document.querySelector("#paris");
+  //   parisElement.innerHTML = parisTimeDate;
 
-//return tokyo current date and time
-let tokyoTimeDate = moment()
-  .tz("Asia/Tokyo")
-  .format("[It is ]dddd DD, MMMM YYYY, HH:mm:s A [in] ${tz}");
-let tokyoElement = document.querySelector("#tokyo");
-tokyoElement.innerHTML = tokyoTimeDate;
+  alert(`It is ${parisTimeDate} in Paris`);
+}
 
-//return sydney current date and time
-let sydneyTimeDate = moment()
-  .tz("Australia/Sydney")
-  .format("[It is ]dddd DD, MMMM YYYY, HH:mm:s A [in] ${tz}");
-let sydneyElement = document.querySelector("#sydney");
-sydneyElement.innerHTML = sydneyTimeDate;
+function updateTokyo() {
+  let tokyoTimeDate = moment()
+    .tz("Asia/Tokyo")
+    .format("dddd DD, MMMM YYYY, HH:mm a");
+  //   let tokyoElement = document.querySelector("#tokyo");
+  //   tokyoElement.innerHTML = tokyoTimeDate;
+
+  alert(`It is ${tokyoTimeDate} in Tokyo`);
+}
+
+function updateSydney() {
+  let sydneyTimeDate = moment()
+    .tz("Australia/Sydney")
+    .format("dddd DD, MMMM YYYY, HH:mm a");
+  //   let sydneyElement = document.querySelector("#syndey");
+  //   sydneyElement.innerHTML = sydneyTimeDate;
+
+  alert(`It is ${sydneyTimeDate} in Sydney`);
+}
